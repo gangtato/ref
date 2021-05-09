@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, HashRouter, Route, Redirect } from "react-router-dom";
+import { Switch, BrowserRouter, Route, Redirect } from "react-router-dom";
 
 import Login from '../ui/views/Login';
 import PhoneBook from '../ui/views/Phonebook';
@@ -25,7 +25,7 @@ const Logout = () => {
 
 const Routes = () => {
     return(
-      <HashRouter>
+      <BrowserRouter>
       <Switch>
         {routes.map((route, idx) => {
           return (
@@ -40,9 +40,9 @@ const Routes = () => {
         <PrivateRoute path="/logout" component={Logout} />
         <Route path="/login" exact={false} component={Login} />
         <Route path="/register" exact={false} component={Register} />
-        <Redirect from='*' to='/login' />
+        {/* <Redirect from='*' to='/login' /> */}
       </Switch>
-      </HashRouter>
+      </BrowserRouter>
     );
 };
 

@@ -1,22 +1,15 @@
 import ContactActionType from '../globalActionTypes';
 
 export function getallcontactAction(data:any){
-   let {id,name,phone,company,job,image,email} = data;
    return{
             type: ContactActionType.CONTACT_GET_ALL,
-            id,
-            name,
-            phone,
-            company,
-            job,
-            image,
-            email
-        }   
+            data
+         }   
 }
 
-export function uploadContactAction<T>(data:T){
+export function uploadContactAction(image:any){
     return{
         type: ContactActionType.CONTACT_ADD,
-        data
+        image
     }
 }
